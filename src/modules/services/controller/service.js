@@ -19,10 +19,10 @@ export const activeService = asyncHandler(async (req, res, next) => {
     return res.status(200).json({ message: "Done", service })
 })
 
-// DELETE USER
+
 export const addService = asyncHandler(async (req, res, next) => {
-    const {name,validUntilDate,fees,state} = req.body
-    const service = await serviceModel.create({name,validUntilDate,fees,state});
+    const {name,validUntilDate,fees,code,from,description,to,type,state} = req.body
+    const service = await serviceModel.create({name,validUntilDate,fees,code,from,to,description,type,state});
     return res.status(200).json({ message: "Done", service })
 })
 
