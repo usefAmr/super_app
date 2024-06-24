@@ -5,6 +5,14 @@ const serviceSchema = new Schema ({
         type:String,
         required : true
     },
+    code : {
+        type:String,
+        required : true
+    },
+    description : {
+        type:String,
+        required : true
+    },
     fees: {
         type:Number,
         allowNull: false
@@ -14,6 +22,22 @@ const serviceSchema = new Schema ({
         type:String,
         enum : ['active','locked'],
         default : 'active'
+    },
+    type:{
+        type:String,
+        enum : ['sheduled','not_sheduled','agent'],
+        default : 'active'
+    },
+    providerId: {
+        type: Schema.Types.ObjectId,
+        ref: 'ServiceProviders',
+        required: true
+    },
+    from: {
+        type: Date
+    },
+    to: {
+        type: Date
     }
 },{
     timestamps : true
