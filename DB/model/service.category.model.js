@@ -15,4 +15,7 @@ const serviceCategorySchema = new Schema({
   }
 });
 
-module.exports = model('ServiceCategories', serviceCategorySchema);
+const ServiceCategories = model('ServiceCategories', serviceCategorySchema);
+
+export default ServiceCategories;
+

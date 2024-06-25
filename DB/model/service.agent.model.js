@@ -25,12 +25,15 @@ state:{
 },
 isVisible: {
     type: Boolean,
-    default: false // Optional: Set a default value if needed
+    default: false 
 },
 hasCalendar: {
     type: Boolean,
-    default: false // Optional: Set a default value if needed
+    default: false 
 }
 });
 
-module.exports = model('ServiceAgent', serviceAgentSchema);
+const serviceAgent = model('ServiceAgent', serviceAgentSchema);
+
+export default serviceAgent;
+

@@ -20,4 +20,7 @@ const serviceProviderSchema = new Schema({
   }
 });
 
-module.exports = model('ServiceProviders', serviceProviderSchema);
+const ServiceProviders = model('ServiceProviders', serviceProviderSchema);
+
+export default ServiceProviders;
+

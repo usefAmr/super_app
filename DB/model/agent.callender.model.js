@@ -1,6 +1,6 @@
 import {Schema , model} from "mongoose"
 
-const serviceAgentSchema = new Schema({
+const AgentCallenderSchema = new Schema({
 fromDate: {
     type: Date
 },
@@ -24,4 +24,6 @@ serviceAgentId: {
 },
 });
 
-module.exports = model('ServiceAgent', serviceAgentSchema);
+const AgentCallender = model('AgentCallender', AgentCallenderSchema);
+
+export default AgentCallender;
