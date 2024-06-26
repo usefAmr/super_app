@@ -10,8 +10,7 @@ const serviceSchema = new Schema ({
         required : true
     },
     description : {
-        type:String,
-        required : true
+        type:String
     },
     fees: {
         type:Number,
@@ -26,7 +25,7 @@ const serviceSchema = new Schema ({
     type:{
         type:String,
         enum : ['sheduled','not_sheduled','agent'],
-        default : 'active'
+        default : 'agent'
     },
     providerId: {
         type: Schema.Types.ObjectId,

@@ -8,10 +8,10 @@ const router =Router();
 
 
 router.post('/Services',serviceController.getAllServices);
-router.post("/serviceWithId",auth,serviceController.service);
-router.post("/ActiveServices",auth,serviceController.activeService);
-router.post("/addServices",auth,isAdmin,validation(validators.ServiceSchema),serviceController.addService);
-router.put("/Services",auth,isAdmin,validation(validators.ServiceSchema),serviceController.updateService);
+router.post("/serviceWithId",serviceController.service);
+router.post("/ActiveServices",serviceController.activeService);
+router.post("/addServices",validation(validators.ServiceSchema),serviceController.addService);
+router.put("/Services",validation(validators.ServiceSchema),serviceController.updateService);
 
 export default router;
 
