@@ -7,5 +7,6 @@ export const ServiceSchema = joi.object({
     code:joi.string().required(),
     fees: joi.number().required(),
     validUntilDate: joi.date().optional(),
+    image: joi.object().optional(),
     state: joi.string().valid('active', 'locked'),
 });

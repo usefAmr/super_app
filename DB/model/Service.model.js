@@ -5,6 +5,9 @@ const serviceSchema = new Schema ({
         type:String,
         required : true
     },
+    image: {
+        type: Object,
+    },
     code : {
         type:String,
         required : true

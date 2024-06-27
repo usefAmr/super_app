@@ -1,5 +1,7 @@
 import serviceModel from "../../../../DB/model/Service.model.js";
 import { asyncHandler } from "../../../utils/errorHandling.js";
+import cloudinary from "../../../utils/cloudinary.js";
+
 
 
 export const getAllServices = asyncHandler(async (req, res, next) => {
@@ -22,7 +24,10 @@ export const activeService = asyncHandler(async (req, res, next) => {
 
 export const addService = asyncHandler(async (req, res, next) => {
     const {name,providerId,validUntilDate,fees,code,from,description,to,type,state} = req.body
-    const service = await serviceModel.create({name,providerId,validUntilDate,fees,code,from,to,description,type,state});
+    const folderName = `services/${name}`.trim();
+    const { public_id, secure_url } = await cloudinary.uploader.upload(req.file.path, { folder: folderName});
+    
+    const service = await serviceModel.create({name,providerId,validUntilDate,fees,code,from,to,description,type,state, image: { public_id, secure_url }});
     return res.status(200).json({ message: "Done", service })
 })
 

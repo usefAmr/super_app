@@ -9,6 +9,9 @@ const serviceCategorySchema = new Schema({
     type: String,
     required: true
   },
+  image: {
+    type: Object,
+  },
   active: {
     type: Boolean,
     required: true
