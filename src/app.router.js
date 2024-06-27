@@ -11,15 +11,14 @@ import serviceAgentRouter from './modules/serviceAgent/service.agent.router.js'
 import serviceCategoryRouter from './modules/serviceCategory/service.category.router.js'
 import serviceProviderRouter from './modules/serviceProvider/service.provider.router.js'
 import transactionRouter from './modules/transactions/transaction.router.js'
-
-
-
-
-
+import morgan from 'morgan'
+import cors from 'cors'
 import {globalErrorHandling} from './utils/errorHandling.js'
 
+export const morganDev = morgan('dev')
+
 const initApp = (app, express) => {
-    
+    app.use(cors())
     app.use(express.json({}))
     app.use(authRouter)
     app.use(userRouter)
