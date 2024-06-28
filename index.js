@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv';
 import express from 'express'
 import initApp from './src/app.router.js'
 const app = express()
-const port = 5000
+const port = 5500
 dotenv.config();
 
 
